@@ -120,3 +120,58 @@ public class ProjectOne {
 
 Bonus step: make sure this still works after your code change. And, of course, if you have working code, it is a good time to commit in github.
 
+### Step 5 - Print the beginning stars
+
+Add a for loop for the number of stars to print. Remember the combined number of stars and spaces is 7.
+
+Using code fragments here to save some space.
+
+```java
+      // print the line
+      for( int i = MAX_LINE_INDEX; i >= 0; i-- ) {
+         System.out.print( "line: " + i ); // we will remove this later, it helps keep track of where we are for debugging
+         
+         // print the beginning stars
+         for( int j = i; j > 0; j-- ){
+            System.out.print( "*" );
+         }
+         
+         // print the beginning spaces
+         
+         // print the slashes
+         // print the backslashes
+         // print the ending spaces
+         // print the ending stars
+         
+         System.out.println();
+      }
+```
+
+This will produce the output 
+```
+line: 6******
+line: 5*****
+line: 4****
+line: 3***
+line: 2**
+line: 1*
+line: 0```
+
+Remember the line number part is extra, we will remove that later. Also, it is worth noting that the i and j variable names don't help much here. You do need to be able to work with them since it looks like a lot of the test content uses i and j. If you want something more descriptive in your own programs, you can use better names.
+
+### Step 6 - Print the beginning spaces
+
+```java
+         // print the beginning stars
+         for( int j = i; j > 0; j-- ){
+            System.out.print( "*" );
+         }
+         
+         // print the beginning spaces
+         for( int j = 1; j < (MAX_LINE_INDEX-i); j++ ){
+            System.out.print( "-" );
+         }
+         // print the slashes
+```
+
+It is hard to spaces, notice that we put in "-" temporarily to see them in the output.
