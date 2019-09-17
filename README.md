@@ -14,7 +14,7 @@ Write a program that produces the following output using nested for loops:
        \\\\\\\\\\\\
 ```
 
-Break down what we are looking at:
+### Step 1 - Break down what we are looking at:
 
 | line # | stars | spaces | slash | backslash | spaces | stars |
 |--------|-------|--------|-------|-----------|--------|-------|
@@ -41,6 +41,25 @@ Looking at spaces and stars, it looks like they always add up to 7 characters di
 
 With spaces and stars neither of these have an advantage. So lets look at the next column, slash. Slash goes from 12 down to 0. When comparing that with the two options he currnently have, it might stand out that 6*2 = 12, 5*2 = 10 ... 0*2 = 0. That looks to be a better fit than using 1 to 7. So, let's get started
 
+### Step 2 - lay out some basic plans
+
+First make a class to hold your program and add some comments for your basic plan.
+
+```java
+public class ProjectOne {
+   public static void main( String[] args ){
+      // print the line
+         // print the beginning stars
+         // print the beginning spaces
+         // print the slashes
+         // print the backslashes
+         // print the ending spaces
+         // print the ending stars
+   }
+}
+```
+
+### Step 3 - Start at the first step. Printing the lines
 
 
 
