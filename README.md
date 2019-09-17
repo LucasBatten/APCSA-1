@@ -61,6 +61,62 @@ public class ProjectOne {
 
 ### Step 3 - Start at the first step. Printing the lines
 
+```java
+public class ProjectOne {
+   public static void main( String[] args ){
+      // print the line
+      for( int i = 6; i >= 0; i-- ) {
+         System.out.print( "line: " + i ); // we will remove this later, it helps keep track of where we are for debugging
+         // print the beginning stars
+         // print the beginning spaces
+         // print the slashes
+         // print the backslashes
+         // print the ending spaces
+         // print the ending stars
+         
+         System.out.println();
+      }
+   }
+}
+```
 
+If you run this you will get the following output:
 
+```
+line: 6
+line: 5
+line: 4
+line: 3
+line: 2
+line: 1
+line: 0
+```
+
+Looks good!
+
+### Step 4 - Identify Constants
+
+Already, we have added a (magic number)[https://en.wikipedia.org/wiki/Magic_number_(programming)]. Remove that now by pulling out the 6 into a constant.
+
+```java
+public class ProjectOne {
+   public static int MAX_LINE_INDEX = 6;
+   public static void main( String[] args ){
+      // print the line
+      for( int i = MAX_LINE_INDEX; i >= 0; i-- ) {
+         System.out.print( "line: " + i ); // we will remove this later, it helps keep track of where we are for debugging
+         // print the beginning stars
+         // print the beginning spaces
+         // print the slashes
+         // print the backslashes
+         // print the ending spaces
+         // print the ending stars
+         
+         System.out.println();
+      }
+   }
+}
+```
+
+Bonus step: make sure this still works after your code change. And, of course, if you have working code, it is a good time to commit in github.
 
