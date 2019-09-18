@@ -1,5 +1,6 @@
 public class ProjectOne {
    public static int MAX_LINE_INDEX = 6;
+   public static int SPACES_STARS_LENGTH = 7;
    public static void main( String[] args ){
       // print the line
       for( int i = MAX_LINE_INDEX; i >= 0; i-- ) {
@@ -11,7 +12,7 @@ public class ProjectOne {
          }
          
          // print the beginning spaces
-         for( int j = 1; j < (MAX_LINE_INDEX-i); j++ ){
+         for( int j = 0; j < (SPACES_STARS_LENGTH - i); j++ ){
             System.out.print( "-" );
          }
          // print the slashes
