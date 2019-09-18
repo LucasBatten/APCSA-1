@@ -155,11 +155,26 @@ line: 4****
 line: 3***
 line: 2**
 line: 1*
-line: 0```
+line: 0
+```
 
 Remember the line number part is extra, we will remove that later. Also, it is worth noting that the i and j variable names don't help much here. You do need to be able to work with them since it looks like a lot of the test content uses i and j. If you want something more descriptive in your own programs, you can use better names.
 
 ### Step 6 - Print the beginning spaces
+
+Go back and look at the table we are looking for the spaces to have a pattern
+
+| line | i | spaces |
+|------|---|--------|
+| 1    | 6 | 1      |
+| 2    | 5 | 2      |
+| 3    | 4 | 3      |
+| 4    | 3 | 4      |
+| 5    | 2 | 5      |
+| 6    | 1 | 6      |
+| 7    | 0 | 7      |
+
+The relationship between i (current line counter) and the number of spaces is `7 - i`
 
 ```java
          // print the beginning stars
@@ -168,10 +183,42 @@ Remember the line number part is extra, we will remove that later. Also, it is w
          }
          
          // print the beginning spaces
-         for( int j = 1; j < (MAX_LINE_INDEX-i); j++ ){
+         for( int j = 0; j < (7-i); j++ ){
             System.out.print( "-" );
          }
+         
          // print the slashes
 ```
 
 It is hard to spaces, notice that we put in "-" temporarily to see them in the output.
+
+The output for this looks like: 
+
+```
+line: 6******-
+line: 5*****--
+line: 4****---
+line: 3***----
+line: 2**-----
+line: 1*------
+line: 0-------
+```
+
+### Step 7 - pull out the magic numbers
+
+We introduced a new number to represent how many total characters were in the stars and spaces combined. Pull that value into a constant
+
+```java
+   public static int MAX_LINE_INDEX = 6;
+   public static int SPACES_STARS_LENGTH = 7;
+   public static void main( String[] args ){
+```
+
+```java
+         // print the beginning spaces
+         for( int j = 0; j < (SPACES_STARS_LENGTH - i); j++ ){
+            System.out.print( "-" );
+         }
+```
+
+
