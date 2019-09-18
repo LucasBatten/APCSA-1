@@ -246,6 +246,17 @@ Let's implement that in a for loop.
          }
 ```
 
+The output will look like: 
+```
+line: 6******-////////////
+line: 5*****--//////////
+line: 4****---////////
+line: 3***----//////
+line: 2**-----////
+line: 1*------//
+line: 0-------
+```
+
 Here the 2 could be pulled out into a constant as well. Seems like a good excercise for the reader at this point. Enjoy!
 
 ### Step 9 - printing the backslashes
@@ -270,5 +281,75 @@ In a for loop, this looks like:
             System.out.print("\\");
          } 
 ```
+
+When we test this we get:
+
+```
+line: 6******-////////////
+line: 5*****--//////////\\
+line: 4****---////////\\\\
+line: 3***----//////\\\\\\
+line: 2**-----////\\\\\\\\
+line: 1*------//\\\\\\\\\\
+line: 0-------\\\\\\\\\\\\
+```
+
+Now that we have the right output, we need to address the magic number we introduced. In this case, we need to extract 12 into a named constant in order to express its meaning.
+
+```java
+   public static int SLASH_BACKSLASH_LENGTH = 12;
+   
+   for( int j = 0; j < SLASH_BACKSLASH_LENGTH - (i*2); j++ ){
+```
+
+### Step 10 - wrapping it up
+
+We have covered the concept that duplication in your code is bad. You should put repeated code into functions that you can reuse. Here we see that we are printing the exact same number of spaces and stars as before. However, in this class, we have not covered how to pass information to those functions. Here we would need to pass down our value of i to a function that printed either the stars or the spaces. So you get a free pass to copy and paste the code to print the spaces and the code to print the stars. Enjoy this while it lasts.
+
+```java
+         // print the ending spaces
+         for( int j = 0; j < (SPACES_STARS_LENGTH - i); j++ ){
+            System.out.print( "-" );
+         }
+                  
+         // print the ending stars
+         for( int j = i; j > 0; j-- ){
+            System.out.print( "*" );
+         }
+ ```
+ 
+ Results of testing:
+ 
+ ```
+line: 6******-////////////-******
+line: 5*****--//////////\\--*****
+line: 4****---////////\\\\---****
+line: 3***----//////\\\\\\----***
+line: 2**-----////\\\\\\\\-----**
+line: 1*------//\\\\\\\\\\------*
+line: 0-------\\\\\\\\\\\\-------
+ ```
+
+This is looking pretty good!
+
+### Step 11 - clean up
+
+We added some stuff to the output to make it easier for us to see what was going on. But, those extras were not supposed to be part of our output. Now we need to clean up:
+
+* the line counter
+* the - character that was used in place of the space
+
+Make sure in the end, you output looks like: 
+
+```
+****** //////////// ******
+*****  //////////\\  *****
+****   ////////\\\\   ****
+***    //////\\\\\\    ***
+**     ////\\\\\\\\     **
+*      //\\\\\\\\\\      *
+       \\\\\\\\\\\\       
+```
+
 
 
