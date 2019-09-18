@@ -190,7 +190,7 @@ The relationship between i (current line counter) and the number of spaces is `7
          // print the slashes
 ```
 
-It is hard to spaces, notice that we put in "-" temporarily to see them in the output.
+It is hard to see spaces in our output, notice that we put in "-" temporarily to see them.
 
 The output for this looks like: 
 
