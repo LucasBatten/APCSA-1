@@ -221,4 +221,54 @@ We introduced a new number to represent how many total characters were in the st
          }
 ```
 
+### Step 8 - print the slashes
+
+Lets look at the table again to see the relationship of slashes to our current line counter
+
+| line | i | slashes |
+|------|---|---------|
+| 1    | 6 | 12      |
+| 2    | 5 | 10      |
+| 3    | 4 | 8       |
+| 4    | 3 | 6       |
+| 5    | 2 | 4       |
+| 6    | 1 | 2       |
+| 7    | 0 | 0       |
+
+From the table we can see that the number of slashes is equal to `i * 2`.
+
+Let's implement that in a for loop.
+
+```java
+         // print the slashes
+         for( int j = 0; j < (i*2); j++ ){
+            System.out.print("/");
+         }
+```
+
+Here the 2 could be pulled out into a constant as well. Seems like a good excercise for the reader at this point. Enjoy!
+
+### Step 9 - printing the backslashes
+
+| line | i | slashes | backslashes |
+|------|---|---------|-------------|
+| 1    | 6 | 12      | 0 |
+| 2    | 5 | 10      | 2 |
+| 3    | 4 | 8       | 4 |
+| 4    | 3 | 6       | 6 |
+| 5    | 2 | 4       | 8 |
+| 6    | 1 | 2       | 10 |
+| 7    | 0 | 0       | 12 |
+
+Think of the same approach we too for combining stars and spaces. In this case the count slashes + backslashes is always 12. Since we know the number of slashes is `(i*2)`, we can determine that the number of backslashes is `12 - (i*2)`.
+
+In a for loop, this looks like: 
+
+```java
+         // print the backslashes
+         for( int j = 0; j < 12 - (i*2); j++ ){
+            System.out.print("\\");
+         } 
+```
+
 
