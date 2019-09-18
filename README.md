@@ -39,7 +39,7 @@ Looking at spaces and stars, it looks like they always add up to 7 characters di
 * If we choose stars we go from 6 down to 0.
 * If we choose spaces we go from 1 to 7 
 
-With spaces and stars neither of these have an advantage. So lets look at the next column, slash. Slash goes from 12 down to 0. When comparing that with the two options he currnently have, it might stand out that 6*2 = 12, 5*2 = 10 ... 0*2 = 0. That looks to be a better fit than using 1 to 7. So, let's get started
+With spaces and stars neither of these have an advantage. So lets look at the next column, slash. Slash goes from 12 down to 0. When comparing that with the two options he currnently have, it might stand out that `6*2 = 12`, `5*2 = 10` ... `0*2 = 0`. That looks to be a better fit than using 1 to 7. So, let's get started
 
 ### Step 2 - lay out some basic plans
 
