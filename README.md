@@ -96,7 +96,7 @@ Looks good!
 
 ### Step 4 - Identify Constants
 
-Already, we have added a (magic number)[https://en.wikipedia.org/wiki/Magic_number_(programming)]. Remove that now by pulling out the 6 into a constant.
+Already, we have added a [magic number](https://en.wikipedia.org/wiki/Magic_number_(programming)). Remove that now by pulling out the 6 into a constant.
 
 ```java
 public class ProjectOne {
